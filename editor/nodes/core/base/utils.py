@@ -36,15 +36,15 @@ def setup_context_menu(graph):
     """
     root_menu = graph.get_context_menu('graph')
 
-    file_menu = root_menu.add_menu('&File')
+    file_menu = root_menu.add_menu('&Graph')
     edit_menu = root_menu.add_menu('&Edit')
 
     # create "File" menu.
-    file_menu.add_command('Open...', _open_session, QtGui.QKeySequence.Open)
-    file_menu.add_command('Import...', _import_session)
-    file_menu.add_command('Save...', _save_session, QtGui.QKeySequence.Save)
-    file_menu.add_command('Save As...', _save_session_as, 'Ctrl+Shift+S')
-    file_menu.add_command('New Session', _new_session)
+    file_menu.add_command('Open Graph...', _open_session, QtGui.QKeySequence.Open)
+    file_menu.add_command('Import Graph...', _import_session)
+    file_menu.add_command('Save Graph...', _save_session, QtGui.QKeySequence.Save)
+    file_menu.add_command('Save Graph As...', _save_session_as, 'Ctrl+Shift+S')
+    file_menu.add_command('New Graph', _new_session)
 
     file_menu.add_separator()
 

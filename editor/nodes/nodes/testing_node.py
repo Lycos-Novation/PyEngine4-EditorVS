@@ -2,7 +2,7 @@ from editor.nodes.core import BaseNode
 
 
 class TestingNode(BaseNode):
-    __identifier__ = "PE4EditorVS"
+    __identifier__ = "Testing"
 
     NODE_NAME = "Testing Node"
 
