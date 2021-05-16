@@ -1,0 +1,8 @@
+from files.scripts.script import Script
+
+
+class {TITLE_NAME}(Script):
+    def __init__(self, engine):
+        super().__init__(engine, "{NAME}")
+{INIT_BODY}
+{FUNCTIONS}

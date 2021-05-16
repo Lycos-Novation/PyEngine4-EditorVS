@@ -4,7 +4,8 @@ from PyQt5.QtCore import QPointF, Qt
 import ast
 
 from editor.nodes.core import setup_context_menu
-from editor.nodes.ast_parser import parse
+from editor.nodes.python_parser import parse
+from editor.nodes.python_generator import generate
 
 
 def draw_trigger_port(painter, rect, info):
@@ -46,7 +47,7 @@ def context_menu(graph):
     pe4_menu = menu.add_menu("&PyEngine 4")
 
     pe4_menu.add_command('Open Script...', _open_python)
-    pe4_menu.add_command('Export Script...', lambda x: print("OP"))
+    pe4_menu.add_command('Export Script...', _save_python)
 
     setup_context_menu(graph)
 
@@ -61,4 +62,10 @@ def _open_python(graph):
     if len(file[0]):
         with open(file[0], "r") as f:
             parse(ast.parse(f.read()), graph)
+
+
+def _save_python(graph):
+    file = QFileDialog.getSaveFileName(graph.viewer(), "Save Python Script", filter="Python Script (*.py)")
+    if len(file[0]):
+        generate(file[0], graph)
 
