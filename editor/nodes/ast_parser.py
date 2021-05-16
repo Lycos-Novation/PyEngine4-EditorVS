@@ -2,15 +2,17 @@ import ast
 
 
 def parse(ast_module, graph):
+    start_nodes = []
     for i in ast_module.body:
         if isinstance(i, ast.ClassDef):
             print(i.name)
             for y in i.body:
                 if isinstance(y, ast.FunctionDef):
-                    parse_function(y, graph)
+                    start_nodes.append(parse_function(y, graph))
             break
-
-    graph.auto_layout_nodes()
+    graph.auto_layout_nodes(start_nodes=start_nodes)
+    for i in start_nodes:
+        i.set_pos(i.x_pos() - 250, i.y_pos() - 0)
     graph.fit_to_selection()
 
 
@@ -35,6 +37,7 @@ def parse_function(ast_function, graph):
         backdrop.wrap_nodes([function_node])
 
     print(ast_function.name)
+    return function_node
 
 
 def parse_expr(ast_expr, last_node, graph):
