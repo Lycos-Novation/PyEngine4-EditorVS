@@ -18,13 +18,10 @@ def parse(ast_module, graph):
 
 def parse_function(ast_function, graph):
     function_node = None
-    backdrop = None
 
     if ast_function.name == "__init__":
-        backdrop = graph.create_node("Utility.BackdropNode", name="Initialization")
         function_node = graph.create_node('Events.InitNode', name="Init")
     elif ast_function.name == "update":
-        backdrop = graph.create_node("Utility.BackdropNode", name="Update")
         function_node = graph.create_node('Events.UpdateNode', name="Update")
 
     if function_node is not None:
@@ -34,7 +31,6 @@ def parse_function(ast_function, graph):
                 last_node = parse_assign(i, last_node, graph)
             elif isinstance(i, ast.Expr):
                 last_node = parse_expr(i, last_node, graph)
-        backdrop.wrap_nodes([function_node])
 
     print(ast_function.name)
     return function_node
