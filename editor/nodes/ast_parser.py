@@ -43,8 +43,8 @@ def parse_assign(ast_assign, last_node, graph):
         attribute_node = parse_attribute(ast_assign.targets[0], graph)
         assign_note.set_input(1, attribute_node.output(0))
     if isinstance(ast_assign.value, ast.Call):
-        last_node = parse_call(ast_assign.value, last_node, graph)
-        assign_note.set_input(2, last_node.output(1))
+        call_node = parse_call(ast_assign.value, None, graph)
+        assign_note.set_input(2, call_node.output(1))
     elif isinstance(ast_assign.value, (ast.Constant, ast.Name)):
         constant_node = parse_literal(ast_assign.value, graph)
         assign_note.set_input(2, constant_node.output(0))
@@ -69,7 +69,8 @@ def parse_call(ast_call, last_node, graph):
         if isinstance(ast_call.args[i], (ast.Name, ast.Constant)):
             arg_node = parse_literal(ast_call.args[i], graph)
             function_node.set_input(i+1, arg_node.output(0))
-    function_node.set_input(0, last_node.output(0))
+    if last_node is not None:
+        function_node.set_input(0, last_node.output(0))
     return function_node
 
 
