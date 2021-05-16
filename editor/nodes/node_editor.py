@@ -10,8 +10,7 @@ class NodeEditor(QWidget):
         super().__init__(parent)
         self.graph = NodeGraph()
 
-        for i in nodes.nodes:
-            self.graph.register_node(i)
+        self.graph.register_nodes(nodes.nodes)
         self.graph.register_node(BackdropNode)
 
         self.layout = QVBoxLayout()
