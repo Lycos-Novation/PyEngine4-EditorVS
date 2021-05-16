@@ -96,8 +96,8 @@ def parse_attribute(ast_attribute, graph):
 
 def parse_literal(ast_literal, graph):
     if isinstance(ast_literal, ast.Name):
-        string_node = graph.create_node("Python.LiteralNode", name="Name")
-        string_node.get_widget("Text").set_value(str(ast_literal.id))
+        string_node = graph.create_node("Python.IdentifierNode", name="Identifier")
+        string_node.get_widget("Name").set_value(str(ast_literal.id))
     elif isinstance(ast_literal, str):
         string_node = graph.create_node("Python.LiteralNode", name="Text")
         string_node.get_widget("Text").set_value(str(ast_literal))

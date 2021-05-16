@@ -6,5 +6,9 @@ from editor.nodes.nodes.literal_node import LiteralNode
 from editor.nodes.nodes.attribute_node import AttributeNode
 from editor.nodes.nodes.get_component_node import GetComponentNode
 from editor.nodes.nodes.print_node import PrintNode
+from editor.nodes.nodes.identifier_node import IdentifierNode
 
-nodes = [TestingNode, InitNode, UpdateNode, AssignNode, LiteralNode, AttributeNode, GetComponentNode, PrintNode]
+nodes = [
+    TestingNode, InitNode, UpdateNode, AssignNode, LiteralNode, AttributeNode, GetComponentNode, PrintNode,
+    IdentifierNode
+]
