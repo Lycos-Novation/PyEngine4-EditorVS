@@ -6,7 +6,7 @@ class Generate(Script):
         super().__init__(engine, "generate")
 
     def update(self, deltatime):
-        a = b
+        transform = self.game_object.get_component("TransformComponent")
 
 
 
