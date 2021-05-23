@@ -51,11 +51,6 @@ def context_menu(graph):
 
     setup_context_menu(graph)
 
-    with open("examples/paddle_script.py", "r") as f:
-        ast_module = ast.parse(f.read())
-        print(ast.dump(ast_module, indent=4))
-        parse(ast_module, graph)
-
 
 def _open_python(graph):
     file = QFileDialog.getOpenFileName(graph.viewer(), "Open Python Script", filter="Python Script (*.py)")

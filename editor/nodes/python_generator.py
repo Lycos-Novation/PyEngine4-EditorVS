@@ -46,11 +46,48 @@ def generate_functions(function_node, indent=4):
 def generate_function(function_node, indent=4):
     if function_node.type_ == "Python.AssignNode":
         line, function_node = generate_assignment(function_node, indent)
-    elif function_node.type_ == "PE4.GetComponentNode":
+    elif function_node.type_ == "PE4.GameObject.GetComponentNode":
         line, function_node = generate_getcomponent(function_node, indent)
+    elif function_node.type_ == "PE4.GameObject.AddChildNode":
+        line, function_node = generate_addchild(function_node, indent)
+    elif function_node.type_ == "PE4.GameObject.AddComponentNode":
+        line, function_node = generate_addcomponent(function_node, indent)
+    elif function_node.type_ == "Python.PrintNode":
+        line, function_node = generate_print(function_node, indent)
+    elif function_node.type_ == "Python.AttributeNode":
+        line, function_node = generate_attribute(function_node, indent)
     else:
         line, function_node = "", None
     return line, function_node
+
+
+def generate_attribute(attribute_node, indent):
+    if len(attribute_node.connected_input_nodes()[attribute_node.input(0)]):
+        object_ = generate_text(attribute_node.connected_input_nodes()[attribute_node.input(0)][0])
+    else:
+        object_ = ""
+
+    if len(attribute_node.connected_input_nodes()[attribute_node.input(1)]):
+        value = generate_text(attribute_node.connected_input_nodes()[attribute_node.input(1)][0])
+    else:
+        value = ""
+
+    line = indent * " " + object_ + "." + value
+
+    return line, None
+
+
+def generate_print(print_node, indent):
+    if len(print_node.connected_input_nodes()[print_node.input(1)]):
+        value = generate_text(print_node.connected_input_nodes()[print_node.input(1)][0])
+    else:
+        value = ""
+
+    line = indent * " " + "print("+value+")"
+
+    if len(print_node.connected_output_nodes()[print_node.output(0)]):
+        return line, print_node.connected_output_nodes()[print_node.output(0)][0]
+    return line, None
 
 
 def generate_getcomponent(getcomp_node, indent):
@@ -63,6 +100,32 @@ def generate_getcomponent(getcomp_node, indent):
 
     if len(getcomp_node.connected_output_nodes()[getcomp_node.output(0)]):
         return line, getcomp_node.connected_output_nodes()[getcomp_node.output(0)][0]
+    return line, None
+
+
+def generate_addcomponent(addcomp_node, indent):
+    if len(addcomp_node.connected_input_nodes()[addcomp_node.input(1)]):
+        component = generate_text(addcomp_node.connected_input_nodes()[addcomp_node.input(1)][0])
+    else:
+        component = ""
+
+    line = indent * " " + "self.game_object.add_component("+component+")"
+
+    if len(addcomp_node.connected_output_nodes()[addcomp_node.output(0)]):
+        return line, addcomp_node.connected_output_nodes()[addcomp_node.output(0)][0]
+    return line, None
+
+
+def generate_addchild(addchild_node, indent):
+    if len(addchild_node.connected_input_nodes()[addchild_node.input(1)]):
+        component = generate_text(addchild_node.connected_input_nodes()[addchild_node.input(1)][0])
+    else:
+        component = ""
+
+    line = indent * " " + "self.game_object.add_child("+component+")"
+
+    if len(addchild_node.connected_output_nodes()[addchild_node.output(0)]):
+        return line, addchild_node.connected_output_nodes()[addchild_node.output(0)][0]
     return line, None
 
 

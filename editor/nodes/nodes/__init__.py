@@ -1,14 +1,9 @@
 from editor.nodes.nodes.testing_node import TestingNode
-from editor.nodes.nodes.init_node import InitNode
-from editor.nodes.nodes.update_node import UpdateNode
-from editor.nodes.nodes.assign_node import AssignNode
-from editor.nodes.nodes.literal_node import LiteralNode
-from editor.nodes.nodes.attribute_node import AttributeNode
-from editor.nodes.nodes.get_component_node import GetComponentNode
-from editor.nodes.nodes.print_node import PrintNode
-from editor.nodes.nodes.identifier_node import IdentifierNode
+from editor.nodes.nodes.pe4_events_nodes import *
+from editor.nodes.nodes.python_nodes import *
+from editor.nodes.nodes.pe4_gameobject_nodes import *
 
 nodes = [
     TestingNode, InitNode, UpdateNode, AssignNode, LiteralNode, AttributeNode, GetComponentNode, PrintNode,
-    IdentifierNode
+    IdentifierNode, AddChildNode, AddComponentNode
 ]

@@ -5,7 +5,6 @@ def parse(ast_module, graph):
     start_nodes = []
     for i in ast_module.body:
         if isinstance(i, ast.ClassDef):
-            print(i.name)
             for y in i.body:
                 if isinstance(y, ast.FunctionDef):
                     start_nodes.append(parse_function(y, graph))
@@ -20,9 +19,9 @@ def parse_function(ast_function, graph):
     function_node = None
 
     if ast_function.name == "__init__":
-        function_node = graph.create_node('Events.InitNode', name="Init")
+        function_node = graph.create_node('PE4.Events.InitNode', name="Init")
     elif ast_function.name == "update":
-        function_node = graph.create_node('Events.UpdateNode', name="Update")
+        function_node = graph.create_node('PE4.Events.UpdateNode', name="Update")
 
     if function_node is not None:
         last_node = function_node
@@ -67,7 +66,11 @@ def parse_call(ast_call, last_node, graph):
             function_node = graph.create_node("Python.PrintNode", name="Print")
     elif isinstance(ast_call.func, ast.Attribute):
         if ast_call.func.attr == "get_component":
-            function_node = graph.create_node("PE4.GetComponentNode", name="Get Component")
+            function_node = graph.create_node("PE4.GameObject.GetComponentNode", name="Get Component")
+        elif ast_call.func.attr == "add_child":
+            function_node = graph.create_node("PE4.GameObject.AddChildNode", name="Add Child")
+        elif ast_call.func.attr == "add_component":
+            function_node = graph.create_node("PE4.GameObject.AddComponentNode", name="Add Component")
 
     if function_node is None:
         return
