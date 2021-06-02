@@ -6,9 +6,6 @@ class Generate(Script):
         super().__init__(engine, "generate")
 
     def update(self, deltatime):
-        self.game_object.get_component("TransformComponent")
-        position = self.game_object.get_component("TransformComponent")
-        position = position.position
-        print(position)
+        print(self.game_object.get_component("TransformComponent").position)
 
 

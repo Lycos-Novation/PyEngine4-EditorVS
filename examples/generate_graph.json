@@ -1,6 +1,6 @@
 {
   "nodes":{
-    "0x1f24c17c340":{
+    "0x20425a37370":{
       "type_":"PE4.Events.UpdateNode",
       "icon":null,
       "name":"Update",
@@ -29,113 +29,11 @@
       "width":170,
       "height":86.0,
       "pos":[
-        -153.3633353008197,
-        329.41818449818925
+        324.29339413455466,
+        266.99343351679505
       ]
     },
-    "0x1f24c17c580":{
-      "type_":"PE4.GameObject.GetComponentNode",
-      "icon":null,
-      "name":"GetComponent",
-      "color":[
-        13,
-        18,
-        23,
-        255
-      ],
-      "border_color":[
-        74,
-        84,
-        85,
-        255
-      ],
-      "text_color":[
-        255,
-        255,
-        255,
-        180
-      ],
-      "disabled":false,
-      "selected":false,
-      "visible":true,
-      "dynamic_port":false,
-      "width":170,
-      "height":86.0,
-      "pos":[
-        240.21706090485532,
-        328.63571850175657
-      ]
-    },
-    "0x1f24c17c8e0":{
-      "type_":"Python.LiteralNode",
-      "icon":null,
-      "name":"Literal",
-      "color":[
-        13,
-        18,
-        23,
-        255
-      ],
-      "border_color":[
-        74,
-        84,
-        85,
-        255
-      ],
-      "text_color":[
-        255,
-        255,
-        255,
-        180
-      ],
-      "disabled":false,
-      "selected":false,
-      "visible":true,
-      "dynamic_port":false,
-      "width":182.33333333333334,
-      "height":80,
-      "pos":[
-        -161.97046126158,
-        442.09328798450576
-      ],
-      "custom":{
-        "Text":"TransformComponent"
-      }
-    },
-    "0x1f24c193f10":{
-      "type_":"Python.AttributeNode",
-      "icon":null,
-      "name":"Attribute",
-      "color":[
-        13,
-        18,
-        23,
-        255
-      ],
-      "border_color":[
-        74,
-        84,
-        85,
-        255
-      ],
-      "text_color":[
-        255,
-        255,
-        255,
-        180
-      ],
-      "disabled":false,
-      "selected":false,
-      "visible":true,
-      "dynamic_port":false,
-      "width":170,
-      "height":86.0,
-      "pos":[
-        443.65821997737123,
-        382.62587225561646
-      ]
-    },
-    "0x1f24c19b670":{
+    "0x20425a3d490":{
       "type_":"Python.PrintNode",
       "icon":null,
       "name":"Print",
@@ -164,14 +62,14 @@
       "width":170,
       "height":86.0,
       "pos":[
-        985.9071555052695,
-        323.15845652672715
+        665.6548616446122,
+        265.7742854185449
       ]
     },
-    "0x1f24c1a8a90":{
-      "type_":"Python.AssignNode",
+    "0x20425a3d700":{
+      "type_":"PE4.GameObject.GetComponentNode",
       "icon":null,
-      "name":"Assign",
+      "name":"GetComponent",
       "color":[
         13,
         18,
@@ -197,11 +95,80 @@
       "width":170,
       "height":108.0,
       "pos":[
-        734.7355706503555,
-        323.94092252316
+        123.13395792327066,
+        374.2784661628131
       ]
     },
-    "0x1f24c3a43d0":{
+    "0x20425a3da90":{
+      "type_":"Python.LiteralNode",
+      "icon":null,
+      "name":"Literal",
+      "color":[
+        13,
+        18,
+        23,
+        255
+      ],
+      "border_color":[
+        74,
+        84,
+        85,
+        255
+      ],
+      "text_color":[
+        255,
+        255,
+        255,
+        180
+      ],
+      "disabled":false,
+      "selected":false,
+      "visible":true,
+      "dynamic_port":false,
+      "width":182.33333333333334,
+      "height":80,
+      "pos":[
+        -138.92073437330987,
+        466.8626786019357
+      ],
+      "custom":{
+        "Text":"TransformComponent"
+      }
+    },
+    "0x20425a52df0":{
+      "type_":"Python.AttributeNode",
+      "icon":null,
+      "name":"Attribute",
+      "color":[
+        13,
+        18,
+        23,
+        255
+      ],
+      "border_color":[
+        74,
+        84,
+        85,
+        255
+      ],
+      "text_color":[
+        255,
+        255,
+        255,
+        180
+      ],
+      "disabled":false,
+      "selected":false,
+      "visible":true,
+      "dynamic_port":false,
+      "width":170,
+      "height":86.0,
+      "pos":[
+        335.26572701880644,
+        401.09972432431755
+      ]
+    },
+    "0x20425a5a0a0":{
       "type_":"Python.IdentifierNode",
       "icon":null,
       "name":"Identifier",
@@ -230,102 +197,194 @@
       "width":182.33333333333334,
       "height":80,
       "pos":[
-        229.26253695479664,
-        238.65212891199
+        101.18929215476712,
+        507.1656088720855
       ],
       "custom":{
-        "Name":"position"
+        "Name":"poisition"
+      }
+    },
+    "0x20425a65e50":{
+      "type_":"Python.AttributeNode",
+      "icon":null,
+      "name":"Attribute 1",
+      "color":[
+        13,
+        18,
+        23,
+        255
+      ],
+      "border_color":[
+        74,
+        84,
+        85,
+        255
+      ],
+      "text_color":[
+        255,
+        255,
+        255,
+        180
+      ],
+      "disabled":false,
+      "selected":false,
+      "visible":true,
+      "dynamic_port":false,
+      "width":170,
+      "height":86.0,
+      "pos":[
+        -148.65020129083285,
+        335.7834496163485
+      ]
+    },
+    "0x20425a6f340":{
+      "type_":"Python.SelfNode",
+      "icon":null,
+      "name":"Self",
+      "color":[
+        13,
+        18,
+        23,
+        255
+      ],
+      "border_color":[
+        74,
+        84,
+        85,
+        255
+      ],
+      "text_color":[
+        255,
+        255,
+        255,
+        180
+      ],
+      "disabled":false,
+      "selected":false,
+      "visible":true,
+      "dynamic_port":false,
+      "width":170,
+      "height":80,
+      "pos":[
+        -415.7678218845123,
+        288.24556798526976
+      ]
+    },
+    "0x20425a6f580":{
+      "type_":"Python.IdentifierNode",
+      "icon":null,
+      "name":"Identifier 1",
+      "color":[
+        13,
+        18,
+        23,
+        255
+      ],
+      "border_color":[
+        74,
+        84,
+        85,
+        255
+      ],
+      "text_color":[
+        255,
+        255,
+        255,
+        180
+      ],
+      "disabled":false,
+      "selected":false,
+      "visible":true,
+      "dynamic_port":false,
+      "width":182.33333333333334,
+      "height":80,
+      "pos":[
+        -427.8409346797067,
+        390.1124571947238
+      ],
+      "custom":{
+        "Name":"game_object"
       }
     }
   },
   "connections":[
     {
       "out":[
-        "0x1f24c17c340",
+        "0x20425a37370",
         "Trigger"
       ],
       "in":[
-        "0x1f24c17c580",
+        "0x20425a3d490",
         "Trigger"
       ]
     },
     {
       "in":[
-        "0x1f24c17c580",
+        "0x20425a3d490",
+        "Value"
+      ],
+      "out":[
+        "0x20425a52df0",
+        "Attribute"
+      ]
+    },
+    {
+      "in":[
+        "0x20425a3d700",
+        "GameObject"
+      ],
+      "out":[
+        "0x20425a65e50",
+        "Attribute"
+      ]
+    },
+    {
+      "in":[
+        "0x20425a3d700",
         "Name"
       ],
       "out":[
-        "0x1f24c17c8e0",
+        "0x20425a3da90",
         ""
       ]
     },
     {
       "out":[
-        "0x1f24c17c580",
-        "Trigger"
-      ],
-      "in":[
-        "0x1f24c1a8a90",
-        "Trigger"
-      ]
-    },
-    {
-      "out":[
-        "0x1f24c17c580",
+        "0x20425a3d700",
         "Component"
       ],
       "in":[
-        "0x1f24c193f10",
+        "0x20425a52df0",
         "Object"
       ]
     },
     {
       "in":[
-        "0x1f24c193f10",
+        "0x20425a52df0",
         "Name"
       ],
       "out":[
-        "0x1f24c3a43d0",
-        ""
-      ]
-    },
-    {
-      "out":[
-        "0x1f24c193f10",
-        "Attribute"
-      ],
-      "in":[
-        "0x1f24c1a8a90",
-        "Value"
-      ]
-    },
-    {
-      "in":[
-        "0x1f24c19b670",
-        "Trigger"
-      ],
-      "out":[
-        "0x1f24c1a8a90",
-        "Trigger"
-      ]
-    },
-    {
-      "in":[
-        "0x1f24c19b670",
-        "Value"
-      ],
-      "out":[
-        "0x1f24c3a43d0",
+        "0x20425a5a0a0",
         ""
       ]
     },
     {
       "in":[
-        "0x1f24c1a8a90",
+        "0x20425a65e50",
+        "Object"
+      ],
+      "out":[
+        "0x20425a6f340",
+        "Self"
+      ]
+    },
+    {
+      "in":[
+        "0x20425a65e50",
         "Name"
       ],
       "out":[
-        "0x1f24c3a43d0",
+        "0x20425a6f580",
         ""
       ]
     }
@@ -334,10 +393,10 @@
     "node_space":null,
     "pipe_layout":1,
     "graph_rect":[
-      2.6876724738757667,
-      -41.87189901164007,
-      847.1661535127869,
-      797.3328503649759
+      -146.34953712327922,
+      18.70810632596499,
+      842.6183840302381,
+      793.0525967343419
     ],
     "grid_mode":2
   }
