@@ -59,6 +59,8 @@ def generate_expression(expr_node, indent=0):
 
     elif expr_node.type_ == "PE4.GameObject.GameObjectNode":
         line, expr_node = "self.game_object", None
+    elif expr_node.type_ == "PE4.Engine.EngineNode":
+        line, expr_node = "self.engine", None
     elif expr_node.type_ == "Python.IdentifierNode":
         line, expr_node = expr_node.get_widget("Name").get_value(), None
     elif expr_node.type_ == "Python.LiteralNode":
