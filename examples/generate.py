@@ -6,6 +6,6 @@ class Generate(Script):
         super().__init__(engine, "generate")
 
     def update(self, deltatime):
-        print(self.game_object.get_component("TransformComponent").position)
+        self.engine.take_screenshot("screenshot.png")
 
 
