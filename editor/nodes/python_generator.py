@@ -65,6 +65,8 @@ def generate_expression(expr_node, indent=0):
         line, expr_node = '"' + expr_node.get_widget("Text").get_value() + '"', None
     elif expr_node.type_ == "Python.SelfNode":
         line, expr_node = "self", None
+    elif expr_node.type_ == "Python.NoneNode":
+        line, expr_node = "None", None
     else:
         print(expr_node.type_)
         line, expr_node = "", None
