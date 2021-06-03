@@ -91,9 +91,12 @@ def generate_print(print_node, indent):
     if len(print_node.connected_input_nodes()[print_node.input(1)]):
         value = generate_expression(print_node.connected_input_nodes()[print_node.input(1)][0])[0]
     else:
-        value = ""
+        value = None
 
-    line = indent * " " + "print("+value+")"
+    if value is not None:
+        line = indent * " " + "print("+value+")"
+    else:
+        line = indent * " " + "print()"
 
     if len(print_node.connected_output_nodes()[print_node.output(0)]):
         return line, print_node.connected_output_nodes()[print_node.output(0)][0]
