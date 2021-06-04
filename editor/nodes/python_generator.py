@@ -52,6 +52,14 @@ def generate_expression(expr_node, indent=0):
 
     elif expr_node.type_ == "PE4.Engine.TakeScreenshotNode":
         line, expr_node = generate_takescreenshot(expr_node, indent)
+    elif expr_node.type_ == "PE4.Engine.GetGameSizeNode":
+        line, expr_node = generate_getgamesize(expr_node, indent)
+    elif expr_node.type_ == "PE4.Engine.StopGameNode":
+        line, expr_node = generate_stopgame(expr_node, indent)
+    elif expr_node.type_ == "PE4.Engine.GetCurrentSceneNode":
+        line, expr_node = generate_getcurrentscene(expr_node, indent)
+    elif expr_node.type_ == "PE4.Engine.GetGameObjectNode":
+        line, expr_node = generate_getgameobject(expr_node, indent)
 
     elif expr_node.type_ == "Python.AssignNode":
         line, expr_node = generate_assignment(expr_node, indent)
@@ -222,4 +230,61 @@ def generate_takescreenshot(takescreenshot_node, indent):
 
     if len(takescreenshot_node.connected_output_nodes()[takescreenshot_node.output(0)]):
         return line, takescreenshot_node.connected_output_nodes()[takescreenshot_node.output(0)][0]
+    return line, None
+
+
+def generate_getgamesize(getgamesize_node, indent):
+    if len(getgamesize_node.connected_input_nodes()[getgamesize_node.input(1)]):
+        engine = generate_expression(getgamesize_node.connected_input_nodes()[getgamesize_node.input(1)][0])[0]
+    else:
+        engine = ""
+
+    line = " " * indent + engine + ".get_game_size()"
+
+    if len(getgamesize_node.connected_output_nodes()[getgamesize_node.output(0)]):
+        return line, getgamesize_node.connected_output_nodes()[getgamesize_node.output(0)][0]
+    return line, None
+
+
+def generate_stopgame(stopgame_node, indent):
+    if len(stopgame_node.connected_input_nodes()[stopgame_node.input(1)]):
+        engine = generate_expression(stopgame_node.connected_input_nodes()[stopgame_node.input(1)][0])[0]
+    else:
+        engine = ""
+
+    line = " " * indent + engine + ".stop_game()"
+
+    if len(stopgame_node.connected_output_nodes()[stopgame_node.output(0)]):
+        return line, stopgame_node.connected_output_nodes()[stopgame_node.output(0)][0]
+    return line, None
+
+
+def generate_getcurrentscene(getcurrentscene_node, indent):
+    if len(getcurrentscene_node.connected_input_nodes()[getcurrentscene_node.input(1)]):
+        engine = generate_expression(getcurrentscene_node.connected_input_nodes()[getcurrentscene_node.input(1)][0])[0]
+    else:
+        engine = ""
+
+    line = " " * indent + engine + ".get_current_scene()"
+
+    if len(getcurrentscene_node.connected_output_nodes()[getcurrentscene_node.output(0)]):
+        return line, getcurrentscene_node.connected_output_nodes()[getcurrentscene_node.output(0)][0]
+    return line, None
+
+
+def generate_getgameobject(getgameobject_node, indent):
+    if len(getgameobject_node.connected_input_nodes()[getgameobject_node.input(1)]):
+        engine = generate_expression(getgameobject_node.connected_input_nodes()[getgameobject_node.input(1)][0])[0]
+    else:
+        engine = ""
+
+    if len(getgameobject_node.connected_input_nodes()[getgameobject_node.input(2)]):
+        id = generate_expression(getgameobject_node.connected_input_nodes()[getgameobject_node.input(2)][0])[0]
+    else:
+        id = ""
+
+    line = " " * indent + engine + ".get_game_object(" + id + ")"
+
+    if len(getgameobject_node.connected_output_nodes()[getgameobject_node.output(0)]):
+        return line, getgameobject_node.connected_output_nodes()[getgameobject_node.output(0)][0]
     return line, None

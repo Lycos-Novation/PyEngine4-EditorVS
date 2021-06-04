@@ -6,7 +6,7 @@ from editor.nodes.utils import draw_trigger_port
 class AddComponentNode(BaseNode):
     __identifier__ = "PE4.GameObject"
 
-    NODE_NAME = "AddComponent"
+    NODE_NAME = "Add Component"
 
     def __init__(self):
         super().__init__()

@@ -6,7 +6,7 @@ from editor.nodes.utils import draw_trigger_port
 class TakeScreenshotNode(BaseNode):
     __identifier__ = "PE4.Engine"
 
-    NODE_NAME = "TakeScreenshot"
+    NODE_NAME = "Take Screenshot"
 
     def __init__(self):
         super().__init__()

@@ -6,6 +6,7 @@ class Generate(Script):
         super().__init__(engine, "generate")
 
     def update(self, deltatime):
-        self.engine.take_screenshot("screenshot.png")
+        self.engine.take_screenshot()
+        self.engine.stop_game()
 
 
