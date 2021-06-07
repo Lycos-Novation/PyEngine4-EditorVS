@@ -3,7 +3,7 @@ from PyQt5.QtGui import QTransform, QPolygonF, QColor, QPen
 from PyQt5.QtCore import QPointF, Qt
 
 from editor.nodes.core import setup_context_menu
-from editor.nodes.python_generator import generate
+from editor.nodes.generator.base import generate
 
 
 def draw_trigger_port(painter, rect, info):
