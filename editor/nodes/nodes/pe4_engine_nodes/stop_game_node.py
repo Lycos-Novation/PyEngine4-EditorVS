@@ -3,7 +3,7 @@ from editor.nodes.core import BaseNode
 from editor.nodes.utils import draw_trigger_port
 
 
-class StopGameNode(BaseNode):
+class EngineStopGameNode(BaseNode):
     __identifier__ = "PE4.Engine"
 
     NODE_NAME = "Stop Game"

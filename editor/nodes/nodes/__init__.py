@@ -3,9 +3,20 @@ from editor.nodes.nodes.pe4_events_nodes import *
 from editor.nodes.nodes.python_nodes import *
 from editor.nodes.nodes.pe4_gameobject_nodes import *
 from editor.nodes.nodes.pe4_engine_nodes import *
+from editor.nodes.nodes.pe4_scene_nodes import *
 
 nodes = [
-    TestingNode, InitNode, UpdateNode, AssignNode, TextNode, AttributeNode, GetComponentNode, PrintNode, NumberNode,
-    IdentifierNode, AddChildNode, AddComponentNode, SelfNode, GameObjectNode, EngineNode, TakeScreenshotNode, NoneNode,
-    GetGameSizeNode, StopGameNode, GetCurrentSceneNode, GetGameObjectNode
+    TestingNode,
+
+    EventsInitNode, EventsUpdateNode,
+
+    PythonAssignNode, PythonTextNode, PythonAttributeNode, PythonPrintNode, PythonNumberNode, PythonIdentifierNode,
+    PythonSelfNode, PythonNoneNode,
+
+    GOGetComponentNode, GOAddChildNode, GOAddComponentNode, GOGameObjectNode,
+
+    EngineEngineNode, EngineTakeScreenshotNode, EngineGetGameSizeNode, EngineStopGameNode, EngineGetCurrentSceneNode,
+    EngineGetGameObjectNode,
+
+    SceneAddGameObjectNode, SceneAddGameObjectsNode, SceneGetGameObjectNode
 ]

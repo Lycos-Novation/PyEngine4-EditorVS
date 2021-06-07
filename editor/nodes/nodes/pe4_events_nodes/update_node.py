@@ -3,7 +3,7 @@ from editor.nodes.core import BaseNode
 from editor.nodes.utils import draw_trigger_port
 
 
-class UpdateNode(BaseNode):
+class EventsUpdateNode(BaseNode):
     __identifier__ = "PE4.Events"
 
     NODE_NAME = "Update"

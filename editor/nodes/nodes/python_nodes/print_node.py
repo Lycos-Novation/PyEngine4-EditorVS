@@ -3,7 +3,7 @@ from editor.nodes.core import BaseNode
 from editor.nodes.utils import draw_trigger_port
 
 
-class PrintNode(BaseNode):
+class PythonPrintNode(BaseNode):
     __identifier__ = "Python"
 
     NODE_NAME = "Print"

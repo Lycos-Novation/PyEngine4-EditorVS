@@ -1,7 +1,7 @@
 from editor.nodes.core import BaseNode
 
 
-class AttributeNode(BaseNode):
+class PythonAttributeNode(BaseNode):
     __identifier__ = "Python"
 
     NODE_NAME = "Attribute"

@@ -1,7 +1,7 @@
 from editor.nodes.core import BaseNode
 
 
-class TextNode(BaseNode):
+class PythonTextNode(BaseNode):
     __identifier__ = "Python"
 
     NODE_NAME = "Text"

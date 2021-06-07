@@ -1,7 +1,7 @@
 from editor.nodes.core import BaseNode
 
 
-class GameObjectNode(BaseNode):
+class GOGameObjectNode(BaseNode):
     __identifier__ = "PE4.GameObject"
 
     NODE_NAME = "GameObject"

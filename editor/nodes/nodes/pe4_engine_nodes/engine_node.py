@@ -1,7 +1,7 @@
 from editor.nodes.core import BaseNode
 
 
-class EngineNode(BaseNode):
+class EngineEngineNode(BaseNode):
     __identifier__ = "PE4.Engine"
 
     NODE_NAME = "Engine"

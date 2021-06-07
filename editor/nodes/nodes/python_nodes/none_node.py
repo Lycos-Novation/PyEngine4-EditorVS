@@ -1,7 +1,7 @@
 from editor.nodes.core import BaseNode
 
 
-class NoneNode(BaseNode):
+class PythonNoneNode(BaseNode):
     __identifier__ = "Python"
 
     NODE_NAME = "None"

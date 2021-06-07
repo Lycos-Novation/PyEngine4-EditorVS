@@ -1,7 +1,7 @@
 from editor.nodes.core import BaseNode
 
 
-class SelfNode(BaseNode):
+class PythonSelfNode(BaseNode):
     __identifier__ = "Python"
 
     NODE_NAME = "Self"

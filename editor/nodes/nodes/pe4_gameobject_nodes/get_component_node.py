@@ -3,7 +3,7 @@ from editor.nodes.core import BaseNode
 from editor.nodes.utils import draw_trigger_port
 
 
-class GetComponentNode(BaseNode):
+class GOGetComponentNode(BaseNode):
     __identifier__ = "PE4.GameObject"
 
     NODE_NAME = "Get Component"
