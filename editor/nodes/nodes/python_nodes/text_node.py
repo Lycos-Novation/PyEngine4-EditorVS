@@ -1,10 +1,10 @@
 from editor.nodes.core import BaseNode
 
 
-class LiteralNode(BaseNode):
+class TextNode(BaseNode):
     __identifier__ = "Python"
 
-    NODE_NAME = "Literal"
+    NODE_NAME = "Text"
 
     def __init__(self):
         super().__init__()
