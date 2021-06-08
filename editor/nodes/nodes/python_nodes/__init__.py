@@ -6,3 +6,7 @@ from editor.nodes.nodes.python_nodes.identifier_node import PythonIdentifierNode
 from editor.nodes.nodes.python_nodes.self_node import PythonSelfNode
 from editor.nodes.nodes.python_nodes.none_node import PythonNoneNode
 from editor.nodes.nodes.python_nodes.number_node import PythonNumberNode
+from editor.nodes.nodes.python_nodes.add_node import PythonAddNode
+from editor.nodes.nodes.python_nodes.sub_node import PythonSubNode
+from editor.nodes.nodes.python_nodes.mul_node import PythonMulNode
+from editor.nodes.nodes.python_nodes.div_node import PythonDivNode

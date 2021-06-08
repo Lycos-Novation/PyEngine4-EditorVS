@@ -11,7 +11,7 @@ nodes = [
     EventsInitNode, EventsUpdateNode,
 
     PythonAssignNode, PythonTextNode, PythonAttributeNode, PythonPrintNode, PythonNumberNode, PythonIdentifierNode,
-    PythonSelfNode, PythonNoneNode,
+    PythonSelfNode, PythonNoneNode, PythonAddNode, PythonSubNode, PythonMulNode, PythonDivNode,
 
     GOGetComponentNode, GOAddChildNode, GOAddComponentNode, GOGameObjectNode,
 

@@ -83,6 +83,14 @@ def generate_expression(expr_node, indent=0):
         line, expr_node = generate_python_print(expr_node, indent, generate_expression)
     elif expr_node.type_ == "Python.PythonAttributeNode":
         line, expr_node = generate_python_attribute(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "Python.PythonAddNode":
+        line, expr_node = generate_python_add(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "Python.PythonSubNode":
+        line, expr_node = generate_python_sub(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "Python.PythonMulNode":
+        line, expr_node = generate_python_mul(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "Python.PythonDivNode":
+        line, expr_node = generate_python_div(expr_node, indent, generate_expression)
     elif expr_node.type_ == "Python.PythonIdentifierNode":
         line, expr_node = expr_node.get_widget("Name").get_value(), None
     elif expr_node.type_ == "Python.PythonNumberNode":
