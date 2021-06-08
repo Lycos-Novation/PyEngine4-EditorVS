@@ -1,4 +1,4 @@
-def generate_add_gameobject(addgameobject_node, indent, generate_expression):
+def generate_scene_addgameobject(addgameobject_node, indent, generate_expression):
     if len(addgameobject_node.connected_input_nodes()[addgameobject_node.input(1)]):
         scene = generate_expression(addgameobject_node.connected_input_nodes()[addgameobject_node.input(1)][0])[0]
     else:
@@ -16,7 +16,7 @@ def generate_add_gameobject(addgameobject_node, indent, generate_expression):
     return line, None
 
 
-def generate_add_gameobjects(addgameobjects_node, indent, generate_expression):
+def generate_scene_addgameobjects(addgameobjects_node, indent, generate_expression):
     if len(addgameobjects_node.connected_input_nodes()[addgameobjects_node.input(1)]):
         scene = generate_expression(addgameobjects_node.connected_input_nodes()[addgameobjects_node.input(1)][0])[0]
     else:
@@ -34,7 +34,7 @@ def generate_add_gameobjects(addgameobjects_node, indent, generate_expression):
     return line, None
 
 
-def generate_get_gameobject(getgameobject_node, indent, generate_expression):
+def generate_scene_getgameobject(getgameobject_node, indent, generate_expression):
     if len(getgameobject_node.connected_input_nodes()[getgameobject_node.input(1)]):
         scene = generate_expression(getgameobject_node.connected_input_nodes()[getgameobject_node.input(1)][0])[0]
     else:

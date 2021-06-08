@@ -49,40 +49,40 @@ def generate_functions(function_node, indent=4):
 
 def generate_expression(expr_node, indent=0):
     if expr_node.type_ == "PE4.GameObject.GOGetComponentNode":
-        line, expr_node = generate_getcomponent(expr_node, indent, generate_expression)
+        line, expr_node = generate_go_getcomponent(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.GameObject.GOAddChildNode":
-        line, expr_node = generate_addchild(expr_node, indent, generate_expression)
+        line, expr_node = generate_go_addchild(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.GameObject.GOAddComponentNode":
-        line, expr_node = generate_addcomponent(expr_node, indent, generate_expression)
+        line, expr_node = generate_go_addcomponent(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.GameObject.GOGameObjectNode":
         line, expr_node = "self.game_object", None
 
     elif expr_node.type_ == "PE4.Scene.SceneAddGameObjectNode":
-        line, expr_node = generate_add_gameobject(expr_node, indent, generate_expression)
+        line, expr_node = generate_scene_addgameobject(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.Scene.SceneAddGameObjectsNode":
-        line, expr_node = generate_add_gameobjects(expr_node, indent, generate_expression)
+        line, expr_node = generate_scene_addgameobjects(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.Scene.SceneGetGameObjectNode":
-        line, expr_node = generate_get_gameobject(expr_node, indent, generate_expression)
+        line, expr_node = generate_scene_getgameobject(expr_node, indent, generate_expression)
 
     elif expr_node.type_ == "PE4.Engine.EngineTakeScreenshotNode":
-        line, expr_node = generate_takescreenshot(expr_node, indent, generate_expression)
+        line, expr_node = generate_engine_takescreenshot(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.Engine.EngineGetGameSizeNode":
-        line, expr_node = generate_getgamesize(expr_node, indent, generate_expression)
+        line, expr_node = generate_engine_getgamesize(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.Engine.EngineStopGameNode":
-        line, expr_node = generate_stopgame(expr_node, indent, generate_expression)
+        line, expr_node = generate_engine_stopgame(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.Engine.EngineGetCurrentSceneNode":
-        line, expr_node = generate_getcurrentscene(expr_node, indent, generate_expression)
+        line, expr_node = generate_engine_getcurrentscene(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.Engine.EngineGetGameObjectNode":
-        line, expr_node = generate_getgameobject(expr_node, indent, generate_expression)
+        line, expr_node = generate_engine_getgameobject(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.Engine.EngineEngineNode":
         line, expr_node = "self.engine", None
 
     elif expr_node.type_ == "Python.PythonAssignNode":
-        line, expr_node = generate_assignment(expr_node, indent, generate_expression)
+        line, expr_node = generate_python_assignment(expr_node, indent, generate_expression)
     elif expr_node.type_ == "Python.PythonPrintNode":
-        line, expr_node = generate_print(expr_node, indent, generate_expression)
+        line, expr_node = generate_python_print(expr_node, indent, generate_expression)
     elif expr_node.type_ == "Python.PythonAttributeNode":
-        line, expr_node = generate_attribute(expr_node, indent, generate_expression)
+        line, expr_node = generate_python_attribute(expr_node, indent, generate_expression)
     elif expr_node.type_ == "Python.PythonIdentifierNode":
         line, expr_node = expr_node.get_widget("Name").get_value(), None
     elif expr_node.type_ == "Python.PythonNumberNode":

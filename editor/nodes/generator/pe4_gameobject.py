@@ -1,4 +1,4 @@
-def generate_getcomponent(getcomp_node, indent, generate_expression):
+def generate_go_getcomponent(getcomp_node, indent, generate_expression):
     if len(getcomp_node.connected_input_nodes()[getcomp_node.input(1)]):
         gameobject = generate_expression(getcomp_node.connected_input_nodes()[getcomp_node.input(1)][0])[0]
     else:
@@ -16,7 +16,7 @@ def generate_getcomponent(getcomp_node, indent, generate_expression):
     return line, None
 
 
-def generate_addcomponent(addcomp_node, indent, generate_expression):
+def generate_go_addcomponent(addcomp_node, indent, generate_expression):
     if len(addcomp_node.connected_input_nodes()[addcomp_node.input(1)]):
         gameobject = generate_expression(addcomp_node.connected_input_nodes()[addcomp_node.input(1)][0])[0]
     else:
@@ -34,7 +34,7 @@ def generate_addcomponent(addcomp_node, indent, generate_expression):
     return line, None
 
 
-def generate_addchild(addchild_node, indent, generate_expression):
+def generate_go_addchild(addchild_node, indent, generate_expression):
     if len(addchild_node.connected_input_nodes()[addchild_node.input(1)]):
         gameobject = generate_expression(addchild_node.connected_input_nodes()[addchild_node.input(1)][0])[0]
     else:

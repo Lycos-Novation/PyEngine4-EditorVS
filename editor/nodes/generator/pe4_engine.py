@@ -1,4 +1,4 @@
-def generate_takescreenshot(takescreenshot_node, indent, generate_expression):
+def generate_engine_takescreenshot(takescreenshot_node, indent, generate_expression):
     if len(takescreenshot_node.connected_input_nodes()[takescreenshot_node.input(1)]):
         engine = generate_expression(takescreenshot_node.connected_input_nodes()[takescreenshot_node.input(1)][0])[0]
     else:
@@ -41,7 +41,7 @@ def generate_takescreenshot(takescreenshot_node, indent, generate_expression):
     return line, None
 
 
-def generate_getgamesize(getgamesize_node, indent, generate_expression):
+def generate_engine_getgamesize(getgamesize_node, indent, generate_expression):
     if len(getgamesize_node.connected_input_nodes()[getgamesize_node.input(1)]):
         engine = generate_expression(getgamesize_node.connected_input_nodes()[getgamesize_node.input(1)][0])[0]
     else:
@@ -54,7 +54,7 @@ def generate_getgamesize(getgamesize_node, indent, generate_expression):
     return line, None
 
 
-def generate_stopgame(stopgame_node, indent, generate_expression):
+def generate_engine_stopgame(stopgame_node, indent, generate_expression):
     if len(stopgame_node.connected_input_nodes()[stopgame_node.input(1)]):
         engine = generate_expression(stopgame_node.connected_input_nodes()[stopgame_node.input(1)][0])[0]
     else:
@@ -67,7 +67,7 @@ def generate_stopgame(stopgame_node, indent, generate_expression):
     return line, None
 
 
-def generate_getcurrentscene(getcurrentscene_node, indent, generate_expression):
+def generate_engine_getcurrentscene(getcurrentscene_node, indent, generate_expression):
     if len(getcurrentscene_node.connected_input_nodes()[getcurrentscene_node.input(1)]):
         engine = generate_expression(getcurrentscene_node.connected_input_nodes()[getcurrentscene_node.input(1)][0])[0]
     else:
@@ -80,7 +80,7 @@ def generate_getcurrentscene(getcurrentscene_node, indent, generate_expression):
     return line, None
 
 
-def generate_getgameobject(getgameobject_node, indent, generate_expression):
+def generate_engine_getgameobject(getgameobject_node, indent, generate_expression):
     if len(getgameobject_node.connected_input_nodes()[getgameobject_node.input(1)]):
         engine = generate_expression(getgameobject_node.connected_input_nodes()[getgameobject_node.input(1)][0])[0]
     else:

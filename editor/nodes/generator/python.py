@@ -1,4 +1,4 @@
-def generate_attribute(attribute_node, indent, generate_expression):
+def generate_python_attribute(attribute_node, indent, generate_expression):
     if len(attribute_node.connected_input_nodes()[attribute_node.input(0)]):
         object_ = generate_expression(attribute_node.connected_input_nodes()[attribute_node.input(0)][0])[0]
     else:
@@ -14,7 +14,7 @@ def generate_attribute(attribute_node, indent, generate_expression):
     return line, None
 
 
-def generate_print(print_node, indent, generate_expression):
+def generate_python_print(print_node, indent, generate_expression):
     if len(print_node.connected_input_nodes()[print_node.input(1)]):
         value = generate_expression(print_node.connected_input_nodes()[print_node.input(1)][0])[0]
     else:
@@ -30,7 +30,7 @@ def generate_print(print_node, indent, generate_expression):
     return line, None
 
 
-def generate_assignment(assign_node, indent, generate_expression):
+def generate_python_assignment(assign_node, indent, generate_expression):
     if len(assign_node.connected_input_nodes()[assign_node.input(1)]):
         identifier = generate_expression(assign_node.connected_input_nodes()[assign_node.input(1)][0])[0]
     else:
