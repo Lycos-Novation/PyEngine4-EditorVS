@@ -77,6 +77,27 @@ def generate_expression(expr_node, indent=0):
     elif expr_node.type_ == "PE4.Engine.EngineEngineNode":
         line, expr_node = "self.engine", None
 
+    elif expr_node.type_ == "PE4.Vec2.Vec2CoordsNode":
+        line, expr_node = generate_vec2_coords(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "PE4.Vec2.Vec2DistanceNode":
+        line, expr_node = generate_vec2_distance(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "PE4.Vec2.Vec2NormalizedNode":
+        line, expr_node = generate_vec2_normalized(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "PE4.Vec2.Vec2SetCoordsNode":
+        line, expr_node = generate_vec2_setcoords(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "PE4.Vec2.Vec2Node":
+        line, expr_node = generate_vec2_vec2(expr_node, indent, generate_expression)
+        if "from files.utils.vec2 import Vec2" not in imports:
+            imports.append("from files.utils.vec2 import Vec2")
+    elif expr_node.type_ == "PE4.Vec2.Vec2ZeroNode":
+        line, expr_node = generate_vec2_zero(expr_node, indent, generate_expression)
+        if "from files.utils.vec2 import Vec2" not in imports:
+            imports.append("from files.utils.vec2 import Vec2")
+    elif expr_node.type_ == "PE4.Vec2.Vec2XNode":
+        line, expr_node = generate_vec2_x(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "PE4.Vec2.Vec2YNode":
+        line, expr_node = generate_vec2_y(expr_node, indent, generate_expression)
+
     elif expr_node.type_ == "Python.PythonAssignNode":
         line, expr_node = generate_python_assignment(expr_node, indent, generate_expression)
     elif expr_node.type_ == "Python.PythonPrintNode":
