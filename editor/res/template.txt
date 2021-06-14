@@ -1,4 +1,5 @@
 from files.scripts.script import Script
+{IMPORTS}
 
 
 class {TITLE_NAME}(Script):

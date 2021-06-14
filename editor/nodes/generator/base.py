@@ -4,11 +4,17 @@ from editor.nodes.generator.python import *
 from editor.nodes.generator.pe4_gameobject import *
 from editor.nodes.generator.pe4_engine import *
 from editor.nodes.generator.pe4_scene import *
+from editor.nodes.generator.pe4_vec2 import *
+
+imports = []
 
 
 def generate(file, graph):
+    global imports
+
     with open(os.path.join("editor", "res", "template.txt"), "r") as f:
         template = f.read()
+    imports = []
 
     template = template \
         .replace("{NAME}", os.path.basename(file).split(".")[0]) \
@@ -34,6 +40,7 @@ def generate(file, graph):
             template = template.replace("{FUNCTIONS}", "    def update(self, deltatime):\n        pass\n\n{FUNCTIONS}")
 
     template = template.replace("{FUNCTIONS}", "")
+    template = template.replace("{IMPORTS}", "\n".join(imports))
 
     with open(file, "w") as f:
         f.write(template)
@@ -48,6 +55,8 @@ def generate_functions(function_node, indent=4):
 
 
 def generate_expression(expr_node, indent=0):
+    global imports
+
     if expr_node.type_ == "PE4.GameObject.GOGetComponentNode":
         line, expr_node = generate_go_getcomponent(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.GameObject.GOAddChildNode":
