@@ -89,8 +89,8 @@ def generate_vec2_zero(node, indent, generate_expression):
 
 
 def generate_vec2_x(node, indent, generate_expression):
-    if len(node.connected_input_nodes()[node.input(1)]):
-        vec = generate_expression(node.connected_input_nodes()[node.input(1)][0])[0]
+    if len(node.connected_input_nodes()[node.input(0)]):
+        vec = generate_expression(node.connected_input_nodes()[node.input(0)][0])[0]
     else:
         vec = ""
 
@@ -99,8 +99,8 @@ def generate_vec2_x(node, indent, generate_expression):
 
 
 def generate_vec2_y(node, indent, generate_expression):
-    if len(node.connected_input_nodes()[node.input(1)]):
-        vec = generate_expression(node.connected_input_nodes()[node.input(1)][0])[0]
+    if len(node.connected_input_nodes()[node.input(0)]):
+        vec = generate_expression(node.connected_input_nodes()[node.input(0)][0])[0]
     else:
         vec = ""
 
