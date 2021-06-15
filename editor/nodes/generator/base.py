@@ -5,6 +5,7 @@ from editor.nodes.generator.pe4_gameobject import *
 from editor.nodes.generator.pe4_engine import *
 from editor.nodes.generator.pe4_scene import *
 from editor.nodes.generator.pe4_vec2 import *
+from editor.nodes.generator.pe4_math import *
 
 imports = []
 
@@ -65,6 +66,15 @@ def generate_expression(expr_node, indent=0):
         line, expr_node = generate_go_addcomponent(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.GameObject.GOGameObjectNode":
         line, expr_node = "self.game_object", None
+
+    elif expr_node.type_ == "PE4.Math.MathClampNode":
+        line, expr_node = generate_math_clamp(expr_node, indent, generate_expression)
+        if "from files.utils.math import *" not in imports:
+            imports.append("from files.utils.math import *")
+    elif expr_node.type_ == "PE4.Math.MathDistanceBetweenRectNode":
+        line, expr_node = generate_math_distance(expr_node, indent, generate_expression)
+        if "from files.utils.math import *" not in imports:
+            imports.append("from files.utils.math import *")
 
     elif expr_node.type_ == "PE4.Scene.SceneAddGameObjectNode":
         line, expr_node = generate_scene_addgameobject(expr_node, indent, generate_expression)

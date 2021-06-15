@@ -1,5 +1,6 @@
 from files.scripts.script import Script
 from files.utils.vec2 import Vec2
+from files.utils.math import *
 
 
 class Generate(Script):
@@ -7,6 +8,7 @@ class Generate(Script):
         super().__init__(engine, "generate")
 
     def update(self, deltatime):
-        print(self.game_object.get_component("TransformComponent").position.distance(Vec2.zero()))
+        print(clamp(-10, Vec2.zero().x))
+        print(distance_between_rect(Vec2.zero(), Vec2.zero(), Vec2.zero(), Vec2.zero()))
 
 

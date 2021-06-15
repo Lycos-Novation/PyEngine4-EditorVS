@@ -5,6 +5,7 @@ from editor.nodes.nodes.pe4_gameobject_nodes import *
 from editor.nodes.nodes.pe4_engine_nodes import *
 from editor.nodes.nodes.pe4_scene_nodes import *
 from editor.nodes.nodes.pe4_vec2_nodes import *
+from editor.nodes.nodes.pe4_math_nodes import *
 
 nodes = [
     TestingNode,
@@ -21,6 +22,8 @@ nodes = [
 
     Vec2SetCoordsNode, Vec2DistanceNode, Vec2CoordsNode, Vec2NormalizedNode, Vec2ZeroNode, Vec2YNode, Vec2XNode,
     Vec2Node,
+
+    MathDistanceBetweenRectNode, MathClampNode,
 
     SceneAddGameObjectNode, SceneAddGameObjectsNode, SceneGetGameObjectNode
 ]
