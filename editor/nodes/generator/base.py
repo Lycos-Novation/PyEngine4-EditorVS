@@ -6,6 +6,7 @@ from editor.nodes.generator.pe4_engine import *
 from editor.nodes.generator.pe4_scene import *
 from editor.nodes.generator.pe4_vec2 import *
 from editor.nodes.generator.pe4_math import *
+from editor.nodes.generator.pe4_color import *
 
 imports = []
 
@@ -116,6 +117,41 @@ def generate_expression(expr_node, indent=0):
         line, expr_node = generate_vec2_x(expr_node, indent, generate_expression)
     elif expr_node.type_ == "PE4.Vec2.Vec2YNode":
         line, expr_node = generate_vec2_y(expr_node, indent, generate_expression)
+
+    elif expr_node.type_ == "PE4.Color.ColorHTMLNode":
+        line, expr_node = generate_color_html(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "PE4.Color.ColorRGBNode":
+        line, expr_node = generate_color_rgb(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "PE4.Color.ColorRGBANode":
+        line, expr_node = generate_color_rgba(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "PE4.Color.ColorLighterNode":
+        line, expr_node = generate_color_lighter(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "PE4.Color.ColorDarkerNode":
+        line, expr_node = generate_color_darker(expr_node, indent, generate_expression)
+    elif expr_node.type_ == "PE4.Color.ColorNode":
+        line, expr_node = generate_color_color(expr_node, indent, generate_expression)
+        if "from files.utils.color import Color" not in imports:
+            imports.append("from files.utils.color import Color")
+    elif expr_node.type_ == "PE4.Color.ColorFromColorNode":
+        line, expr_node = generate_color_from_color(expr_node, indent, generate_expression)
+        if "from files.utils.color import Color" not in imports:
+            imports.append("from files.utils.color import Color")
+    elif expr_node.type_ == "PE4.Color.ColorFromHTMLNode":
+        line, expr_node = generate_color_from_html(expr_node, indent, generate_expression)
+        if "from files.utils.color import Color" not in imports:
+            imports.append("from files.utils.color import Color")
+    elif expr_node.type_ == "PE4.Color.ColorFromRGBNode":
+        line, expr_node = generate_color_from_rgb(expr_node, indent, generate_expression)
+        if "from files.utils.color import Color" not in imports:
+            imports.append("from files.utils.color import Color")
+    elif expr_node.type_ == "PE4.Color.ColorFromRGBANode":
+        line, expr_node = generate_color_from_rgba(expr_node, indent, generate_expression)
+        if "from files.utils.color import Color" not in imports:
+            imports.append("from files.utils.color import Color")
+    elif expr_node.type_ == "PE4.Color.ColorFromNameNode":
+        line, expr_node = generate_color_from_name(expr_node, indent, generate_expression)
+        if "from files.utils.color import Color" not in imports:
+            imports.append("from files.utils.color import Color")
 
     elif expr_node.type_ == "Python.PythonAssignNode":
         line, expr_node = generate_python_assignment(expr_node, indent, generate_expression)
