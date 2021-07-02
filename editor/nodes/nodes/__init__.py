@@ -12,7 +12,7 @@ from editor.nodes.nodes.pe4_color_nodes import *
 nodes = [
     TestingNode,
 
-    EventsInitNode, EventsUpdateNode,
+    EventsInitNode, EventsUpdateNode, EventsStartNode, EventsShowNode,
 
     PythonAssignNode, PythonTextNode, PythonAttributeNode, PythonPrintNode, PythonNumberNode, PythonIdentifierNode,
     PythonSelfNode, PythonNoneNode, PythonAddNode, PythonSubNode, PythonMulNode, PythonDivNode,

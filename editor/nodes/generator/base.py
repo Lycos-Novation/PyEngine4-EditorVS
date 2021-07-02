@@ -41,8 +41,30 @@ def generate(file, graph):
         else:
             template = template.replace("{FUNCTIONS}", "    def update(self, deltatime):\n        pass\n\n{FUNCTIONS}")
 
+    start = graph.get_node_by_name("Start")
+    if start is not None:
+        if len(start.connected_output_nodes()[start.output(0)]):
+            template = template.replace("{FUNCTIONS}", "    def start(self):\n" +
+                                        generate_functions(update.connected_output_nodes()[update.output(0)][0]) +
+                                        "\n\n{FUNCTIONS}")
+        else:
+            template = template.replace("{FUNCTIONS}", "    def start(self):\n        pass\n\n{FUNCTIONS}")
+
+    show = graph.get_node_by_name("Show")
+    if show is not None:
+        if len(show.connected_output_nodes()[show.output(0)]):
+            template = template.replace("{FUNCTIONS}", "    def show(self, screen, camera_pos):\n" +
+                                        generate_functions(update.connected_output_nodes()[update.output(0)][0]) +
+                                        "\n\n{FUNCTIONS}")
+        else:
+            template = template.replace("{FUNCTIONS}",
+                                        "    def show(self, screen, camera_pos):\n        pass\n\n{FUNCTIONS}")
+
     template = template.replace("{FUNCTIONS}", "")
-    template = template.replace("{IMPORTS}", "\n".join(imports))
+    if len(imports):
+        template = template.replace("{IMPORTS}", "\n".join(imports))
+    else:
+        template = template.replace("{IMPORTS}\n", "")
 
     with open(file, "w") as f:
         f.write(template)
