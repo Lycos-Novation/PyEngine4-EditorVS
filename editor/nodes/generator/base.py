@@ -60,6 +60,17 @@ def generate(file, graph):
             template = template.replace("{FUNCTIONS}",
                                         "    def show(self, screen, camera_pos):\n        pass\n\n{FUNCTIONS}")
 
+    for i in ("Key Press", "Key Release", "Mouse Press", "Mouse Release", "Mouse Motion", "Mouse Wheel"):
+        temp = graph.get_node_by_name(i)
+        if temp is not None:
+            if len(temp.connected_output_nodes()[temp.output(0)]):
+                template = template.replace("{FUNCTIONS}", "    def "+i.replace(" ", "_").lower()+"(self, evt):\n" +
+                                            generate_functions(temp.connected_output_nodes()[temp.output(0)][0]) +
+                                            "\n\n{FUNCTIONS}")
+            else:
+                template = template.replace("{FUNCTIONS}", "    def "+i.replace(" ", "_").lower() +
+                                            "(self, evt):\n        pass\n\n{FUNCTIONS}")
+
     template = template.replace("{FUNCTIONS}", "")
     if len(imports):
         template = template.replace("{IMPORTS}", "\n".join(imports))

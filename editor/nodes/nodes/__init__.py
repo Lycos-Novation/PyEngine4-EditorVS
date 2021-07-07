@@ -12,7 +12,8 @@ from editor.nodes.nodes.pe4_color_nodes import *
 nodes = [
     TestingNode,
 
-    EventsInitNode, EventsUpdateNode, EventsStartNode, EventsShowNode,
+    EventsInitNode, EventsUpdateNode, EventsStartNode, EventsShowNode, EventsKeyPressNode, EventsKeyReleaseNode,
+    EventsMousePressNode, EventsMouseReleaseNode, EventsMouseMotionNode, EventsMouseWheelNode,
 
     PythonAssignNode, PythonTextNode, PythonAttributeNode, PythonPrintNode, PythonNumberNode, PythonIdentifierNode,
     PythonSelfNode, PythonNoneNode, PythonAddNode, PythonSubNode, PythonMulNode, PythonDivNode,

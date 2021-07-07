@@ -2,3 +2,9 @@ from editor.nodes.nodes.pe4_events_nodes.init_node import EventsInitNode
 from editor.nodes.nodes.pe4_events_nodes.update_node import EventsUpdateNode
 from editor.nodes.nodes.pe4_events_nodes.start_node import EventsStartNode
 from editor.nodes.nodes.pe4_events_nodes.show_node import EventsShowNode
+from editor.nodes.nodes.pe4_events_nodes.key_press_node import EventsKeyPressNode
+from editor.nodes.nodes.pe4_events_nodes.key_release_node import EventsKeyReleaseNode
+from editor.nodes.nodes.pe4_events_nodes.mouse_press_node import EventsMousePressNode
+from editor.nodes.nodes.pe4_events_nodes.mouse_release_node import EventsMouseReleaseNode
+from editor.nodes.nodes.pe4_events_nodes.mouse_motion_node import EventsMouseMotionNode
+from editor.nodes.nodes.pe4_events_nodes.mouse_wheel_node import EventsMouseWheelNode
