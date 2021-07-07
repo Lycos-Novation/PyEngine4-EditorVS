@@ -45,7 +45,7 @@ def generate(file, graph):
     if start is not None:
         if len(start.connected_output_nodes()[start.output(0)]):
             template = template.replace("{FUNCTIONS}", "    def start(self):\n" +
-                                        generate_functions(update.connected_output_nodes()[update.output(0)][0]) +
+                                        generate_functions(start.connected_output_nodes()[start.output(0)][0]) +
                                         "\n\n{FUNCTIONS}")
         else:
             template = template.replace("{FUNCTIONS}", "    def start(self):\n        pass\n\n{FUNCTIONS}")
@@ -54,7 +54,7 @@ def generate(file, graph):
     if show is not None:
         if len(show.connected_output_nodes()[show.output(0)]):
             template = template.replace("{FUNCTIONS}", "    def show(self, screen, camera_pos):\n" +
-                                        generate_functions(update.connected_output_nodes()[update.output(0)][0]) +
+                                        generate_functions(show.connected_output_nodes()[show.output(0)][0]) +
                                         "\n\n{FUNCTIONS}")
         else:
             template = template.replace("{FUNCTIONS}",
